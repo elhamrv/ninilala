@@ -26,7 +26,8 @@ $this->title = 'My Yii Application';
 	
      $index = 0;
 	foreach ($models as $a) {
-	    $tblimage = $a->getImage();
+	    $tblimage = $a->getOneImage();
+	   // echo print_r($tblimage);exit;
 	    $url=$tblimage->photopath;
 	    $t=$a->title;
 	    $c=$a->comment;
