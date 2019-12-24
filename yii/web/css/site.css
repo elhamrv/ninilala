@@ -427,6 +427,27 @@ body {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.tblimage-create, .tblimage-update ,.tbl-gallery-create ,.tbl-gallery-update ,.tblproduct-create ,.tblproduct-update ,.ninicarousel-create ,.ninicarousel-update{
+	border: 1px gray solid;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #f4f2f2;
+	width: 600px;
+    margin: 0 auto;
+}
+
+.form-image .form-group .form-control{
+	width: 400px;
+	display: inline-block;
+}
+
+.form-image .form-group .control-label{
+	width: 110px;
+	
+	
+}
+	
 button, input {
     overflow: visible;
 }
@@ -441,4 +462,38 @@ input, button, select, optgroup, textarea {
     color: #ccc;
     content: "/ ";
     padding: 0 5px;
+}
+
+.form-image  .form-group label{
+	float:left;
+	height:38px;
+	line-height:36px;
+}
+	
+.form-image  .form-group:after{
+	clear:both;
+}
+
+.form-image .btn-success {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.form-image .btn-success:hover {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.index .btn-success {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.index .btn-success:hover {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
 }

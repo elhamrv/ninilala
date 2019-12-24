@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Tblproduct */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="form-image">
 <div class="tblproduct-form">
 
     <?php $form = ActiveForm::begin([
@@ -18,9 +18,7 @@ use yii\widgets\ActiveForm;
     
      <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'productpath')->fileInput() ?>
-
-    <?= $form->field($model, 'productcode')->textInput(['maxlength' => true]) ?>
+     <?= $form->field($model, 'productcode')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'productname')->textInput(['maxlength' => true]) ?>
 
@@ -35,4 +33,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

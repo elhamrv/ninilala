@@ -66,11 +66,7 @@ class NiniCarousel extends \yii\db\ActiveRecord
         return $this->hasOne(Tblimage::className(), ['id' => 'imageid']);
     }
     
-    public function getOneImage()
-    {
-        return Tblimage::findOne(['id' => $this->imageid]);
-    }
-
+   
 /**
      * {@inheritdoc}
      * @return NiniCarouselQuery the active query used by this AR class.

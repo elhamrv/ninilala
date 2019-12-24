@@ -3,12 +3,12 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Tblproduct;
 use app\models\tblproductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\lib\TblproductLib;
 
 /**
  * TblproductController implements the CRUD actions for Tblproduct model.
@@ -59,33 +59,25 @@ class TblproductController extends Controller
     }
 
     /**
-     * Creates a new Tblproduct model.
+     * Creates a new TblproductLib model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Tblproduct();
+        $model = new TblproductLib();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->save();
-            $imageid=$model->productcode;
-            
-            $productpath = UploadedFile::getInstance($model, 'productpath');
-            $imgName='/web/productimage/img_'. $imageid .'.'. $productpath->getExtension();
-            $productpath->saveAs(Yii::getAlias('@webroot').$imgName);
-            
-            
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
+        
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing Tblproduct model.
+     * Updates an existing TblproductLib model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -105,7 +97,7 @@ class TblproductController extends Controller
     }
 
     /**
-     * Deletes an existing Tblproduct model.
+     * Deletes an existing TblproductLib model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -119,15 +111,15 @@ class TblproductController extends Controller
     }
 
     /**
-     * Finds the Tblproduct model based on its primary key value.
+     * Finds the TblproductLib model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Tblproduct the loaded model
+     * @return TblproductLib the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Tblproduct::findOne($id)) !== null) {
+        if (($model = TblproductLib::findOne($id)) !== null) {
             return $model;
         }
 

@@ -19,9 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type') ?>
 
-    <?= $form->field($model, 'productpath') ?>
-
-    <?= $form->field($model, 'productcode') ?>
+     <?= $form->field($model, 'productcode') ?>
 
     <?= $form->field($model, 'title') ?>
 

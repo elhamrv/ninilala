@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = Yii::t('app', 'Carousels Image ');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="index">
 <div class="ninicarousel-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -54,4 +55,5 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                     ]); ?>
             
+</div>
 </div>
