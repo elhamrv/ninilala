@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Ninicarousel */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="form-image">
 <div class="ninicarousel-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -30,4 +30,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

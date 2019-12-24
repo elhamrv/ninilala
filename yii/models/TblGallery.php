@@ -72,20 +72,7 @@ class TblGallery extends \yii\db\ActiveRecord
         return $this->hasMany(Tblimage::className(), ['id' => 'image_id'])->viaTable('gallery_images', ['gallery_id' => 'id']);
     }
     
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDefaultImage()
-    {
-        $item = GalleryImages::findOne(['gallery_id' => $this->id , 'isdefault' => 1]);
-        
-        if($item){
-            
-            return Tblimage::findOne(['id' => $item->image_id]);
-        }
-        return false;
-    }
-
+    
     
     public function getImagesModel()
     {

@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\lib\NiniCarouselLib;
 use app\models\Ninicarousel;
 use app\models\NinicarouselSearch;
 use yii\web\Controller;
@@ -45,7 +46,7 @@ class NinicarouselController extends Controller
     }
 
     /**
-     * Displays a single Ninicarousel model.
+     * Displays a single NinicarouselLib model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +59,13 @@ class NinicarouselController extends Controller
     }
 
     /**
-     * Creates a new Ninicarousel model.
+     * Creates a new NinicarouselLib model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ninicarousel();
+        $model = new NinicarouselLib();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -96,7 +97,7 @@ class NinicarouselController extends Controller
     }
 
     /**
-     * Deletes an existing Ninicarousel model.
+     * Deletes an existing NinicarouselLib model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,7 +111,7 @@ class NinicarouselController extends Controller
     }
 
     /**
-     * Finds the Ninicarousel model based on its primary key value.
+     * Finds the NinicarouselLib model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
      * @return Ninicarousel the loaded model
@@ -118,7 +119,7 @@ class NinicarouselController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Ninicarousel::findOne($id)) !== null) {
+        if (($model = NiniCarouselLib::findOne($id)) !== null) {
             return $model;
         }
 

@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = Yii::t('app', 'Maneg Product');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="index">
 <div class="tblproduct-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'type',
-            'productpath',
             'productcode',
             'title',
             //'productname',
@@ -57,4 +57,5 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]); ?>
             
 
+</div>
 </div>

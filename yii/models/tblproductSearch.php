@@ -18,7 +18,7 @@ class tblproductSearch extends Tblproduct
     {
         return [
             [['id', 'type', 'quantity'], 'integer'],
-            [['productpath', 'productcode', 'title', 'productname', 'comment', 'status'], 'safe'],
+            [['productcode', 'title', 'productname', 'comment', 'status'], 'safe'],
         ];
     }
 
@@ -63,8 +63,8 @@ class tblproductSearch extends Tblproduct
             'quantity' => $this->quantity,
         ]);
 
-        $query->andFilterWhere(['like', 'productpath', $this->productpath])
-            ->andFilterWhere(['like', 'productcode', $this->productcode])
+       
+        $query->andFilterWhere(['like', 'productcode', $this->productcode])
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'productname', $this->productname])
             ->andFilterWhere(['like', 'comment', $this->comment])

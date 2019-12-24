@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TblGallery;
+use app\lib\TblGalleryLib;
 use app\models\TblgallerySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -58,13 +58,13 @@ class TblgalleryController extends Controller
     }
 
     /**
-     * Creates a new TblGallery model.
+     * Creates a new TblGalleryLib model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TblGallery();
+        $model = new TblGalleryLib();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class TblgalleryController extends Controller
     }
 
     /**
-     * Updates an existing TblGallery model.
+     * Updates an existing TblGalleryLib model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class TblgalleryController extends Controller
     }
 
     /**
-     * Deletes an existing TblGallery model.
+     * Deletes an existing TblGalleryLib model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class TblgalleryController extends Controller
     }
 
     /**
-     * Finds the TblGallery model based on its primary key value.
+     * Finds the TblGalleryLib model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TblGallery the loaded model
+     * @return TblGalleryLib the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TblGallery::findOne($id)) !== null) {
+        if (($model = TblGalleryLib::findOne($id)) !== null) {
             return $model;
         }
 

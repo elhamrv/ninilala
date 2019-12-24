@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\TblGallery */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="form-image">
 <div class="tbl-gallery-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -28,4 +28,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

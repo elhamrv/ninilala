@@ -11,7 +11,12 @@ $this->title = 'Art';
 <div class="row">
 <?php
 foreach($models as $pr){
-    $url = $pr->productpath;
+    $tblimage = $pr->getDefaultImage();
+    
+    if(isset($tblimage) == false || isset($tblimage->photopath) == false){
+        continue;
+    }
+    $url = $tblimage->photopath;
     $name=$pr->productname;
     $quantity=$pr->quantity;
     $url=Yii::getAlias("@web").$url;

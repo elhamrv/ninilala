@@ -9,7 +9,6 @@ use Yii;
  *
  * @property int $id
  * @property int $type
- * @property string $productpath
  * @property string $productcode
  * @property string $title
  * @property string $productname
@@ -17,6 +16,8 @@ use Yii;
  * @property int $quantity
  * @property string $status
  *
+ * @property ProductImages[] $productImages
+ * @property Tblimage[] $images
  * @property TblproductType $type0
  */
 class Tblproduct extends \yii\db\ActiveRecord
@@ -36,9 +37,7 @@ class Tblproduct extends \yii\db\ActiveRecord
     {
         return [
             [['type', 'quantity'], 'integer'],
-            [['productpath'], 'required'],
             [['comment'], 'string'],
-            [['productpath'], 'string', 'max' => 400],
             [['productcode', 'title', 'status'], 'string', 'max' => 45],
             [['productname'], 'string', 'max' => 100],
             [['type'], 'exist', 'skipOnError' => true, 'targetClass' => TblproductType::className(), 'targetAttribute' => ['type' => 'id']],
@@ -53,7 +52,6 @@ class Tblproduct extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'type' => Yii::t('app', 'Type'),
-            'productpath' => Yii::t('app', 'Productpath'),
             'productcode' => Yii::t('app', 'Productcode'),
             'title' => Yii::t('app', 'Title'),
             'productname' => Yii::t('app', 'Productname'),
@@ -63,6 +61,22 @@ class Tblproduct extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProductImages()
+    {
+        return $this->hasMany(ProductImages::className(), ['product_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages()
+    {
+        return $this->hasMany(Tblimage::className(), ['id' => 'image_id'])->viaTable('product_images', ['product_id' => 'id']);
+    }
+   
     /**
      * @return \yii\db\ActiveQuery
      */

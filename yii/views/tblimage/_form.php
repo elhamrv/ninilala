@@ -12,8 +12,8 @@ use yii\widgets\ActiveForm;
 //echo "<br>webroot: " . Yii::getAlias('@webroot') . '/web/thumbnail';
 
 ?>
-
-<div class="tblimage-form ">
+<div class="form-image">
+  <div class="tblimage-form ">
 
     <?php $form = ActiveForm::begin([
          'options' => ['enctype' => 'multipart/form-data'],
@@ -41,4 +41,5 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+  </div>
 </div>

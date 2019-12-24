@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = Yii::t('app', 'Images');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="index">
 <div class="tblimage-index">
 
     <h1>Manege Images</h1>
@@ -58,4 +59,5 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 
+</div>
 </div>

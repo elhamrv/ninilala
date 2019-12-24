@@ -15,6 +15,9 @@ use app\models\Tblimage;
 use app\models\Tblproduct;
 use app\models\TblGallery;
 use app\models\GalleryImages;
+use app\lib\TblproductLib;
+use app\lib\TblGalleryLib;
+use app\lib\NiniCarouselLib;
 
 class SiteController extends Controller
 {
@@ -67,7 +70,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $models=NiniCarousel::find()->where([])->limit(4)->all();
+        $models=NiniCarouselLib::find()->where([])->limit(4)->all();
         return $this->render('index',["models"=>$models]);
     }
 
@@ -136,13 +139,13 @@ class SiteController extends Controller
     
     public function actionArt()
     {
-        $models=Tblproduct::find()->all();
+        $models=TblproductLib::find()->all();
         return $this->render('art',["models"=>$models]);
     }
     
     public function actionPhotogallery()
     {
-        $models=TblGallery::find()->all();
+        $models=TblGalleryLib::find()->all();
         return $this->render('photogallery',["models"=>$models]);
         
     }
@@ -150,7 +153,7 @@ class SiteController extends Controller
     public function actionPhotodetail($id)
     {
         
-        $model=TblGallery::find()->where(["id"=>$id])->one();
+        $model=TblGalleryLib::find()->where(["id"=>$id])->one();
       
         return $this->render('photodetail',["model"=>$model]);
     }
