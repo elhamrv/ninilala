@@ -8,6 +8,7 @@ use app\models\TblgallerySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Tblimage;
 
 /**
  * TblGalleryController implements the CRUD actions for TblGallery model.
@@ -65,13 +66,15 @@ class TblgalleryController extends Controller
     public function actionCreate()
     {
         $model = new TblGalleryLib();
-
+        $images = Tblimage::findAll(['status' => 1]);
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'images' => $images
         ]);
     }
 

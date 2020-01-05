@@ -65,6 +65,7 @@ class TblimageController extends Controller
      */
     public function actionCreate()
     {
+        
         $model = new Tblimage();
         if ($model->load(Yii::$app->request->post())) {
             $model->save();

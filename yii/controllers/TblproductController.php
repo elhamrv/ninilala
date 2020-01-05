@@ -9,6 +9,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\lib\TblproductLib;
+use app\models\Tblimage;
+
 
 /**
  * TblproductController implements the CRUD actions for Tblproduct model.
@@ -66,13 +68,15 @@ class TblproductController extends Controller
     public function actionCreate()
     {
         $model = new TblproductLib();
-
+        $images = Tblimage::findAll(['status' => 1]);
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         
         return $this->render('create', [
             'model' => $model,
+            'images' => $images
         ]);
     }
 
