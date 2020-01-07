@@ -65,16 +65,17 @@ class TblgalleryController extends Controller
      */
     public function actionCreate()
     {
-        $model = new TblGalleryLib();
-        $images = Tblimage::findAll(['status' => 1]);
+        $model = new TblGalleryLib();       
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            
+            
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
-            'images' => $images
         ]);
     }
 

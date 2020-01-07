@@ -22,8 +22,6 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
         
             <?php $form = ActiveForm::begin(); ?>
         
-            <?= $form->field($model, 'id')->textInput() ?>
-        
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         
             <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
@@ -54,25 +52,18 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
     <div class="modal-body">
     <div class="main-body">
      <div class="row" style="margin: 0;">
-      <?php
-      foreach($images as $img){
-          $cod=$img->photocod;
-           $url=$img->thumbnailpath;
-         // echo print_r($url); exit;
-           $url=Yii::getAlias("@web").$url
-          ?>
       
-         <div class="col-md-2">
+         <div class="col-md-2" ng-repeat="img in images">
               <div  class="card mb-2 shadow-sm image-card">
-                   <img id="myImg" onclick="imageclick('<?php echo $url;?>', '')" alt="<?php echo $cod;?>" src="<?php echo $url;?>"   width="60px" height="60px">                                   
+                   <img id="myImg"  alt="{{img.code}}" src="{{img.url}}"   width="60px" height="60px">                                   
                 <div class="image-card-body">
                   <p class="image-card-text">
-                  	<input id="img<?php echo $img->id;?>" type="checkbox" value="<?php echo $img->id;?>" />
-                  	&nbsp;<label for="img<?php echo $img->id;?>"><?php echo $cod;?></label></p>
+                  	<input id="img{{img.id}}" type="checkbox" value="{{img.id}}" />
+                  	&nbsp;<label for="img{{img.id}}">{{img.code}}</label></p>
                 </div>
               </div>
            </div>
-         <?php }?> 
+   
      	
       </div>
      </div>
