@@ -16,7 +16,7 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
     <div class="form-image">
         <div class="tbl-gallery-form">
         	<p>
-        		<button id="btnselect" Type="button"  class="btn btn-success" data-toggle="modal" data-target="#selectModalCenter">select</button>
+        		<button id="btnselect" Type="button"  class="btn btn-success" ng-click="showDailog()" >select</button>
             </p>
             <!-- Modal -->
         
@@ -30,6 +30,8 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
         
             <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
         
+        <input ng-repeat="imgid in selectedImages" type="hidden" value="{{imgid}}" name="selectedImages[]"  >
+        
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
             </div>
@@ -40,12 +42,12 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
     </div>
 
 
-    <div class="modal fade " id="selectModalCenter" tabindex="-1" role="dialog" aria-labelledby="selectModalCenterTitle" aria-hidden="true">
+    <div class="modal " id="selectModalCenter" tabindex="-1" role="dialog" aria-labelledby="selectModalCenterTitle" ng-if="showModal" style="display: block;">
       <div class="modal-dialog modal-dialog-centered"  role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="selectModalLongTitle">Select Image</h5>
-            <button   type="button" class="close"  data-dismiss="modal" aria-label="Close">
+            <button   type="button" ng-click="hideDailog()" class="close"  data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -58,7 +60,7 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
                    <img id="myImg"  alt="{{img.code}}" src="{{img.url}}"   width="60px" height="60px">                                   
                 <div class="image-card-body">
                   <p class="image-card-text">
-                  	<input id="img{{img.id}}" type="checkbox" value="{{img.id}}" />
+                  	<input id="img{{img.id}}" type="checkbox" ng-checked="checkedlist[img.id]" ng-click="togglechecked(img.id)" value="{{img.id}}" />
                   	&nbsp;<label for="img{{img.id}}">{{img.code}}</label></p>
                 </div>
               </div>
@@ -69,8 +71,8 @@ $this->registerJsFile(Yii::getAlias("@web")."/web/js/gallery.js");
      </div>
     
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary"  ng-click="hideDailog()">Close</button>
+            <button type="button" class="btn btn-primary" ng-click="selectImages()">Save changes</button>
           </div>
         </div>
       </div>

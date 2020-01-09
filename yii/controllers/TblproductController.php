@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\lib\TblproductLib;
 use app\models\Tblimage;
+use app\models\ProductImages;
 
 
 /**
@@ -68,15 +69,34 @@ class TblproductController extends Controller
     public function actionCreate()
     {
         $model = new TblproductLib();
-        $images = Tblimage::findAll(['status' => 1]);
         
+        if(count($_POST) > 1){
+            //print_r($_POST);
+            //exit;
+        }
+                
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            
+            $data = [];
+            $data["ProductImages"] = [];
+            $data["ProductImages"]["product_id"] = $model->id;
+            foreach($_POST["selectedImages"] as $index => $imageid){
+                $data["ProductImages"]["image_id"] = $imageid;
+                $data["ProductImages"]["positon"] = $index + 1;
+                $data["ProductImages"]["isdefault"] = $index == 0;
+                
+                $product_image = new ProductImages();
+                $product_image->load($data);
+                $product_image->save(false);
+            }
+            
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
         
         return $this->render('create', [
             'model' => $model,
-            'images' => $images
+            
         ]);
     }
 
@@ -90,8 +110,25 @@ class TblproductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        if(count($_POST) > 1){
+            //print_r($_POST);
+            //exit;
+        }
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            
+            $data = [];
+            $data["ProductImages"] = [];
+            $data["ProductImages"]["product_id"] = $model->id;
+            foreach($_POST["selectedImages"] as $index => $imageid){
+                $data["ProductImages"]["image_id"] = $imageid;
+                $data["ProductImages"]["positon"] = $index + 1;
+                $data["ProductImages"]["isdefault"] = $index == 0;
+                
+                $product_image = new ProductImages();
+                $product_image->load($data);
+                $product_image->save(false);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
