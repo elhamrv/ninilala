@@ -70,10 +70,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        
         $models=NiniCarouselLib::find()->where([])->limit(4)->all();
         return $this->render('index',["models"=>$models]);
     }
 
+    
+    public function actionIndex2()
+    {
+        $this->layout="main2";
+        $models=NiniCarouselLib::find()->where([])->limit(4)->all();
+        return $this->render('index2',["models"=>$models]);
+    }
+    
     /**
      * Login action.
      *
