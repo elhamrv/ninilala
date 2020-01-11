@@ -123,10 +123,10 @@ AppAsset::register($this);
         		<a href=""  class="">Impressum</a>
             </div>     
         	<div class="footer-child box">
-                    <a  href="#" class=""><img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/facebook.png" width="30" height="30" ></a>
+                    <a  href="#" class=""><img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/face.png" width="40" height="40" ></a>
                    
                 	<a href="https://www.instagram.com/ninilala__/" class="">
-                		<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/instagram.png" width="30" height="30" >
+                		<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/insta.png" width="40" height="40" >
                 	</a>
         		</div> 
         	

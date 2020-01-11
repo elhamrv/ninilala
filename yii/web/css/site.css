@@ -116,6 +116,9 @@ a {
 	border-bottom: 2px solid lightgray;
 }
 
+.main-nav ul li a.active{
+	border-bottom: 2px solid lightgray;
+}
 
 .navbar-line{
 	height: 3px;
