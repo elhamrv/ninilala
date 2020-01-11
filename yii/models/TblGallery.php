@@ -32,13 +32,11 @@ class TblGallery extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'code'], 'required'],
-            [['id'], 'integer'],
+            [['name', 'code'], 'required'],
             [['price'], 'number'],
             [['description'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['code'], 'string', 'max' => 45],
-            [['id'], 'unique'],
         ];
     }
 
@@ -63,7 +61,7 @@ class TblGallery extends \yii\db\ActiveRecord
     {
         return $this->hasMany(GalleryImages::className(), ['gallery_id' => 'id']);
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -71,13 +69,12 @@ class TblGallery extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Tblimage::className(), ['id' => 'image_id'])->viaTable('gallery_images', ['gallery_id' => 'id']);
     }
-    
-    
-    
+
     public function getImagesModel()
     {
         return $this->getImages()->all();
     }
+    
     /**
      * {@inheritdoc}
      * @return TblGalleryQuery the active query used by this AR class.

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\types\ProductType;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblproduct */
@@ -30,7 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'type',
+            [
+                'attribute'=> 'type',
+                'value' => function ($model) {
+                return ProductType::getTitle($model->type);
+               
+                },
+                ],
             'productcode',
             'title',
             'productname',

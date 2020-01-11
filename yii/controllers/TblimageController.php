@@ -65,6 +65,7 @@ class TblimageController extends Controller
      */
     public function actionCreate()
     {
+        
         $model = new Tblimage();
         if ($model->load(Yii::$app->request->post())) {
             $model->save();
@@ -124,6 +125,31 @@ class TblimageController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionListimages()
+    {
+        $images = Tblimage::findAll(['status' => 1]);
+        $list = [];
+        
+        foreach ($images AS $model){
+            $url = $model->thumbnailpath;
+            $url = Yii::getAlias("@web") . $url;
+            
+            $data = [];
+            $data['id'] = $model->id;
+            $data['code'] = $model->photocod;
+            $data['url'] = $url;
+            
+            $list[] = $data;
+        }
+        
+        \Yii::$app->response->format = 'json';
+        $this->layout =  false;
+        echo json_encode($list, true);
+        exit;
+       // return $this->redirect(['index']);
+    }
+    
+    
     /**
      * Finds the Tblimage model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

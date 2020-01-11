@@ -8,6 +8,8 @@ use app\models\TblgallerySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Tblimage;
+use app\models\GalleryImages;
 
 /**
  * TblGalleryController implements the CRUD actions for TblGallery model.
@@ -64,9 +66,28 @@ class TblgalleryController extends Controller
      */
     public function actionCreate()
     {
-        $model = new TblGalleryLib();
-
+        $model = new TblGalleryLib();       
+        
+        if(count($_POST) > 1){
+            //print_r($_POST);
+            //exit;
+        }
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            
+            $data = [];
+            $data["GalleryImages"] = [];
+            $data["GalleryImages"]["gallery_id"] = $model->id;
+            foreach($_POST["selectedImages"] as $index => $imageid){
+                $data["GalleryImages"]["image_id"] = $imageid;
+                $data["GalleryImages"]["position"] = $index + 1;
+                $data["GalleryImages"]["isdefault"] = $index == 0;
+                
+                $gallery_image = new GalleryImages();
+                $gallery_image->load($data);
+                $gallery_image->save(false);
+            }
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -85,8 +106,26 @@ class TblgalleryController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        if(count($_POST) > 1){
+            //print_r($_POST);
+            //exit;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            
+            $data = [];
+            $data["GalleryImages"] = [];
+            $data["GalleryImages"]["gallery_id"] = $model->id;
+            foreach($_POST["selectedImages"] as $index => $imageid){
+                $data["GalleryImages"]["image_id"] = $imageid;
+                $data["GalleryImages"]["position"] = $index + 1;
+                $data["GalleryImages"]["isdefault"] = $index == 0;
+                
+                $gallery_image = new GalleryImages();
+                $gallery_image->load($data);
+                $gallery_image->save(false);
+            }
+            
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
