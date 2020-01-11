@@ -1,0 +1,512 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 65px 15px 20px;
+}
+
+.footer {
+    height: 100px;
+    background-color: #0f0000;
+    border-top: 1px solid #ddd;
+    
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 30px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.page-header {
+	padding-left: 50px;
+    padding-right: 50px;
+    background-color: #0f0000;
+    width: 100vw;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height :45px;
+}
+
+.carousel-item img.carousel{
+	width :100%;
+	height : 450px;
+}
+
+.page-header {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #0f0000;
+    width: 100vw;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 60px;
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-top: 10px;
+    margin-left: 90px;
+}
+.nav-link img{
+	width :80px;
+	height : 28px;
+}
+.page-header a.nav-link {
+	color: #d9dbde;
+}
+
+.page-header a.nav-link:hover {
+	color: #e0e28d;
+}
+
+body {
+    background-color: #fcfcfc!important;
+}
+
+.margintop50 {
+	margin-top :50px;
+} 
+
+.footer-child {
+    width: 200px;
+    margin: 20px auto;
+    }
+
+.sprite {
+    background-image: url(img/sprite.png);
+    background-repeat: no-repeat;
+    background-size: 204px auto;
+}    
+ 
+.facebook {
+    background-position: -1.2px -74.7px;
+}    
+
+.footer-social {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+.footer-child {
+	position: relative;
+    width: 220px;
+    margin: 20px auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  text-align: center;
+  color: beige;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}   
+.border-radius {
+  border: 2px solid #c1c1c1;
+  border-color: #dee2e6;
+  border-style: outset;
+  border-radius: 10px;
+}
+.a-carousel{
+	color: #f1f2f4;
+	text-decoration: none;
+	background-color: transparent
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 0; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  height: calc(100vh - 40px);
+  max-width: calc(100vw -40px);
+  margin-top: 20px;
+  width: auto !important;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  color: ##fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* unvisited link */
+.page-footer a:link {
+  color: #fffdfd;
+}
+
+/* visited link */
+.page-footer a:visited {
+  color: #d9dbde;
+}
+
+/* mouse over link */
+.page-footer a:hover {
+  color: #fffdfd;
+}
+
+/* selected link */
+.page-footer a:active {
+  color: #ffff00;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.row-photodetail {
+  display:flex;
+  padding: 10px;
+  
+}
+
+/* Style the images inside the grid */
+.column-photodetail img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column-photodetail img:hover {
+  opacity: 1;
+   
+}
+
+.container-photodetail {
+  position: relative;
+ 
+}
+
+.img-photodetail-large{
+	width: 400px;
+    margin-left: calc(50% - 200px);
+    margin-top: 30px;
+    height: 300px;
+}
+
+.img-photodetail-thumbnail{
+	width: 49px;
+    height: 49px;
+}
+/* Expanding image text */
+#imgtext-photodetail{
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn-photodetail {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.column-photodetail {
+	witdh: 60px;
+	margin: 5px;
+	display: flex;
+}
+
+.column-photodetail:first-child{	
+	margin-left: auto;
+}
+
+.column-photodetail:last-child{	
+	margin-right: auto;
+}
+
+
+.column-photodetail img{
+	
+	margin: auto;
+}
+
+
+.form-control {
+    display: block;
+    width: 50%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.tblimage-create, .tblimage-update ,.tbl-gallery-create ,.tbl-gallery-update ,.tblproduct-create ,.tblproduct-update ,.ninicarousel-create ,.ninicarousel-update{
+	border: 1px gray solid;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #f4f2f2;
+	width: 600px;
+    margin: 0 auto;
+}
+
+.form-image .form-group .form-control{
+	width: 400px;
+	display: inline-block;
+}
+
+.form-image .form-group .control-label{
+	width: 110px;
+	
+}
+	
+button, input {
+    overflow: visible;
+}
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.breadcrumb > li + li:before {
+    color: #ccc;
+    content: "/ ";
+    padding: 0 5px;
+}
+
+.form-image  .form-group label{
+	float:left;
+	height:38px;
+	line-height:36px;
+}
+	
+.form-image  .form-group:after{
+	clear:both;
+}
+
+.form-image .btn-success {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.form-image .btn-success:hover {
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.clear{
+	clear:both;
+}
+
+.main-body{
+	width: 660px;
+    height: 410px;
+    overflow-y:auto;
+}
+
+.image-card-body{
+	flex: 1 1 auto;
+}
+
+.image-card-text{
+	margin-bottom: 0;
+    font-size: 12px;
+}
+
+.image-card{
+	
+    height: 80px;
+    width: 60px;
+  }
+    

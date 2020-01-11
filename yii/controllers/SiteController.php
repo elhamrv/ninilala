@@ -142,10 +142,13 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $models=Image::find()->where(["id"=>2])->all();
-        return $this->render('about',["models"=>$models]);
+        return $this->render('about',[]);
     }
     
+    public function actionShop()
+    {
+        return $this->render('shop',[]);
+    }
     public function actionArt()
     {
         $models=TblproductLib::find()->all();

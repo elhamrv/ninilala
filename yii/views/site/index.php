@@ -13,14 +13,11 @@ $this->registerJsFile(Yii::getAlias("@web") . '/web/js/index.js', [
 ?>
 
 <div  class = "home-main-content">
-	<img class="index-top-img" src="<?php echo Yii::getAlias("@web")?>/web/images/website.jpg" class="" alt="">
+
+
 
 	<div class="carousel-container">
-    	<div class="carousel-desc">
     	
-             
-    	
-    	</div>
 		<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
              <?php
@@ -57,6 +54,7 @@ $this->registerJsFile(Yii::getAlias("@web") . '/web/js/index.js', [
              <?php $index ++;}?> 
                     
             </div>
+
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -70,30 +68,10 @@ $this->registerJsFile(Yii::getAlias("@web") . '/web/js/index.js', [
 	</div>
   
   
-  <div class="row margintop50" >
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+    <div class="row margintop50" >
+
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
   
   
-
-
-
 </div>
  

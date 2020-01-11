@@ -9,14 +9,10 @@ $this->title = 'About';
 
 ?>
 <div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
-    
-	
-            <code><?= __FILE__ ?></code>
-        </div>
+	<div class="">
+		<div class="description">Prgah Masoud is an artist living in Hannover. Her works explore memory and landscape. Currently stocked at Laluna in Inglewood, works can be bought direct or specially comissioned. </div>
+		<div class="about-bild"><img class="about-img" src="<?php echo Yii::getAlias("@web")?>/web/images/about.jpg"  alt=""  ></div>
+	</div>
+</div>
         
         
