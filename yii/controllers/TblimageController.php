@@ -15,6 +15,9 @@ use yii\web\UploadedFile;
  */
 class TblimageController extends Controller
 {
+    
+    
+    
     /**
      * {@inheritdoc}
      */
@@ -29,7 +32,14 @@ class TblimageController extends Controller
             ],
         ];
     }
-
+    
+    public function beforeAction($action)
+    {
+        if (\Yii::$app->user->isGuest){
+            $this->redirect(Yii::getAlias("@web")."/site/login");
+        }
+    }
+    
     /**
      * Lists all Tblimage models.
      * @return mixed

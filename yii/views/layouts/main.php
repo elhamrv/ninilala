@@ -93,6 +93,7 @@ AppAsset::register($this);
             		<li class="products-collection">
             			 <a href="<?php echo Yii::getAlias("@web")?>/site/shop">Shop</a>
                     </li>
+                    <?php if (!Yii::$app->user->isGuest) {?>
                      <li class=" products-collection">
                         <a class=" dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manegment</a>
                         <div class="dropdown-menu">
@@ -104,6 +105,7 @@ AppAsset::register($this);
                           <a class="dropdown-item" href="#">Separated link</a>
                        </div>
                    </li>
+                   <?php } ?>
           		</ul>
           		<div class="navbar-line"></div>
           	
@@ -120,18 +122,34 @@ AppAsset::register($this);
     
         <footer class="footer clearfix page-footer">
         	<div class="footer-child box">
-        		<a href=""  class="">Impressum</a>
+        		<a href="<?php echo Yii::getAlias("@web")?>/site/impressum"  class="">
+        		<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/impressum1.png" width="50" height="50" >
+        		</a>
             </div>     
         	<div class="footer-child box">
-                    <a  href="#" class=""><img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/face.png" width="40" height="40" ></a>
-                   
+                    <a  href="#" class="">
+                    <img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/face.png" width="40" height="40" >
+                    </a>                  
                 	<a href="https://www.instagram.com/ninilala__/" class="">
                 		<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/insta.png" width="40" height="40" >
                 	</a>
+                	<a href="<?php echo Yii::getAlias("@web")?>/site/contact" class="">
+               			<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/mail.png" width="40" height="40" >
+              		 </a>
         		</div> 
         	
         	<div class="footer-child box">
-               <a href="<?php echo Yii::getAlias("@web")?>/site/contact" class="">Cantact</a>
+               
+            <?php if (Yii::$app->user->isGuest) {?>
+				<a href="<?php echo Yii::getAlias("@web")?>/site/login" class="">
+                	<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/login.png" width="50" height="50" >
+                </a>
+             <?php } else { ?>
+             	<a href="<?php echo Yii::getAlias("@web")?>/site/logout" class="">
+                	<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/logout.png" width="40" height="40" >
+                </a>
+             <?php }  ?>
+             
             </div>
     	</footer>
     

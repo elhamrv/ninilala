@@ -29,6 +29,14 @@ class NinicarouselController extends Controller
             ],
         ];
     }
+    
+    
+    public function beforeAction($action)
+    {
+        if (\Yii::$app->user->isGuest){
+            $this->redirect(Yii::getAlias("@web")."/site/login");
+        }
+    }
 
     /**
      * Lists all Ninicarousel models.

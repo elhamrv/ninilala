@@ -1,7 +1,9 @@
 <?php
 
+use app\widgets\Alert;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\widgets\Breadcrumbs;
+use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblimage */
@@ -13,11 +15,15 @@ use yii\widgets\ActiveForm;
 
 ?>
 <div class="form-image">
+	
   <div class="tblimage-form ">
 
     <?php $form = ActiveForm::begin([
          'options' => ['enctype' => 'multipart/form-data'],
      ]); ?>
+    <?= $form->field($model, 'photopath')->fileInput() ?>
+    
+    <?= $form->field($model, 'thumbnailpath')->fileInput() ?>
 
     <?= $form->field($model, 'photocod')->textInput(['maxlength' => true]) ?>
 
@@ -27,12 +33,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'resulationh')->textInput() ?>
 
-    <?= $form->field($model, 'status')->dropDownList(['0' => ' ', '1' => 'verfügbar', '2' => 'ausverkauft']) ?>
+    <?= $form->field($model, 'status')->dropDownList(['0' => '', '1' => 'verfügbar', '2' => 'ausverkauft']) ?>
 
-    <?= $form->field($model, 'photopath')->fileInput() ?>
     
-    <?= $form->field($model, 'thumbnailpath')->fileInput() ?>
-
     <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

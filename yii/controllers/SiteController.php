@@ -41,7 +41,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    //'logout' => ['post'],
                 ],
             ],
         ];
@@ -76,13 +76,6 @@ class SiteController extends Controller
     }
 
     
-    public function actionIndex2()
-    {
-        $this->layout="main2";
-        $models=NiniCarouselLib::find()->where([])->limit(4)->all();
-        return $this->render('index2',["models"=>$models]);
-    }
-    
     /**
      * Login action.
      *
@@ -96,7 +89,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->goHome();
         }
 
         $model->password = '';
@@ -143,6 +136,11 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about',[]);
+    }
+    
+    public function actionImpressum()
+    {
+        return $this->render('impressum',[]);
     }
     
     public function actionShop()

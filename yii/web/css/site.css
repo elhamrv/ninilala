@@ -103,7 +103,7 @@ a {
 
 .main-nav ul li{
 	float: left;
-	width: 12%;
+	width: 14%;
 	padding-bottom: 10px;
 }
 
@@ -418,11 +418,6 @@ body #topNav, body #categoryNav {
     display: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-    display: block;
-}
-
-
 .collection-type-page #page, .not-found-page #page {
     width: 70%;
     margin-right: auto;
@@ -471,9 +466,6 @@ element.style {
 svg:not(:root) {
     overflow: hidden;
 }
-
-
-
 
 .footer-child {
     width: 200px;
@@ -626,8 +618,6 @@ svg:not(:root) {
 
 
 
-
-
 /* The grid: Four equal columns that floats next to each other */
 .row-photodetail {
   display:flex;
@@ -708,27 +698,18 @@ svg:not(:root) {
     background-color: #f4f2f2;
 	width: 600px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .form-image .form-group .form-control{
-	width: 400px;
+	width: 300px;
 	display: inline-block;
 }
 
 .form-image .form-group .control-label{
 	width: 110px;
-	
 }
 	
-button, input {
-    overflow: visible;
-}
-input, button, select, optgroup, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
 
 .breadcrumb > li + li:before {
     color: #ccc;
@@ -737,6 +718,7 @@ input, button, select, optgroup, textarea {
 }
 
 .form-image  .form-group label{
+	clear: both;
 	float:left;
 	height:38px;
 	line-height:36px;
@@ -746,13 +728,25 @@ input, button, select, optgroup, textarea {
 	clear:both;
 }
 
-.form-image .btn-success {
+.form-image .btn-success , .index .tblimage-index .btn-success{
     color: #fff;
     background-color: #141515;
     border-color: #111111;
 }
 
-.form-image .btn-success:hover {
+.form-image .btn-success:hover ,.index .tblimage-index .btn-success:hover{
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.index .tblproduct-index .btn-success , .index .tblgallery-index .btn-success{
+    color: #fff;
+    background-color: #141515;
+    border-color: #111111;
+}
+
+.index .tblproduct-index .btn-success:hover ,.index .tblgallery-index .btn-success:hover{
     color: #fff;
     background-color: #141515;
     border-color: #111111;
@@ -778,8 +772,7 @@ input, button, select, optgroup, textarea {
 }
 
 .image-card{
-	
-    height: 80px;
+	height: 80px;
     width: 60px;
   }
   
