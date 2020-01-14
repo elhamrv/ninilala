@@ -1,13 +1,16 @@
 <?php
 
 /* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
+use yii\helpers\Html;
+$this->title = 'Photogallery';
 ?>
 
 
  <div class="row">
-       
+ 	
+    <div class=" description-contact description-view">
+		 <?= Html::encode($this->title) ?>
+		</div>   
 <?php 
 	
 

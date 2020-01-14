@@ -8,4 +8,8 @@ app.controller('BodyController', function($scope) {
             $(this).addClass("active");
         }
     });
+	
+	$scope.taggelMenu = function(){
+		$(".topNav").toggleClass("taggeld");
+	}
 });

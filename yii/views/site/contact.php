@@ -35,7 +35,7 @@ $this->title = 'Contact';
         </p>
 
     <?php else: ?>
-    	<div class=" description-contact">
+    	<div class=" description-contact description-view">
 		 <?= Html::encode($this->title) ?>
 		</div>
 		<div class="description ">

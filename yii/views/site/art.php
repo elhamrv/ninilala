@@ -1,14 +1,18 @@
 
-
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Html;
+//use Codeception\PHPUnit\ResultPrinter\HTML;
 
-$this->title = 'Art';
+$this->title = 'Artwork';
 
 ?>
 
 <div class="row">
+	<div class=" description-contact description-view">
+		 <?= Html::encode($this->title) ?>
+	</div> 
 <?php
 foreach($models as $pr){
     $tblimage = $pr->getDefaultImage();

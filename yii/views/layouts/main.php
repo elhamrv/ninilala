@@ -28,70 +28,44 @@ AppAsset::register($this);
 <body ng-app="myApp" ng-controller="BodyController" >
 <?php $this->beginBody() ?>
 
-    <div class="main-container">
-    
-        <div id="mobileNav" class="">
-          <div class="wrapper">
-            <nav class="main-nav mobileNav">
-            <ul>
-              <li class="page-collection active-link">
-                  <a href="/">HOME</a>
-             </li>
-             <li class="page-collection">
-                  <a href="/about">About</a>
-             </li>
-             <li class="page-collection">   
-                  <a href="/new-page-1">Artwork</a>
-            </li>
-            <li class="page-collection">
-                  <a href="/new-page">Instagram</a>
-            </li>
-            <li class="page-collection">
-                  <a href="/contact">Contact</a>            
-            </li>
-            <li class="products-collection">
-                  <a href="/shop">Shop</a>           
-            </li>
-          </ul>
-          </nav>
-         </div>
-        </div>
-    
+    <div class="main-container">    
+
     	<header id="header" class="header clear">
     
           <div id="upper-logo" class="upper-logo">
-            <div id="mobileMenuLink" class="mobileMenuLink">
-            <a class="no-display">Menu</a>
-            </div>
+            
             <h1 class="logo" >
-              <a href="/" id="">Ninilala</a>
+             <button ng-click="taggelMenu()" class="menu-button">
+             <img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/menu.png" width="30" height="30" >
+             </button>
+              <a href="<?php echo Yii::getAlias("@web")?>/" id="">Ninilala</a>
+              
             </h1>
           </div>
           
-          <div class="topNav" id="topNav">
+          <div class="topNav" >
       		<nav class="main-nav">
-           		<ul class="">
-            
-                    <li class="page-collection active-link" id="">
-            			  <a href="<?php echo Yii::getAlias("@web")?>" id="">HOME</a>
+           		<ul>
+                    <li class="page-collection">
+            			  <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>" id="">HOME</a>
                     </li>
             		<li class="page-collection">
-            			  <a href="<?php echo Yii::getAlias("@web")?>/site/about">About</a>
+            			  <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>/site/about">About</a>
             		</li>
             		<li class="page-collection">
-            			  <a href="<?php echo Yii::getAlias("@web")?>/site/photogallery">Photogallery</a>
+            			  <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>/site/photogallery">Photogallery</a>
                     </li>
                     <li class="page-collection">
-            			  <a href="<?php echo Yii::getAlias("@web")?>/site/art">Artwork</a>
+            			  <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>/site/art">Artwork</a>
                     </li>
                     <li class="page-collection">
-            			  <a href="https://www.instagram.com/ninilala__/">Instagram</a>
+            			  <a ng-click="taggelMenu()" href="https://www.instagram.com/ninilala__/" target="_blank">Instagram</a>
                     </li>
             		<li class="page-collection">
-            			 <a href="<?php echo Yii::getAlias("@web")?>/site/contact">Contact</a>
+            			 <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>/site/contact">Contact</a>
                     </li>
             		<li class="products-collection">
-            			 <a href="<?php echo Yii::getAlias("@web")?>/site/shop">Shop</a>
+            			 <a ng-click="taggelMenu()" href="<?php echo Yii::getAlias("@web")?>/site/shop">Shop</a>
                     </li>
                     <?php if (!Yii::$app->user->isGuest) {?>
                      <li class=" products-collection">
@@ -104,7 +78,7 @@ AppAsset::register($this);
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Separated link</a>
                        </div>
-                   </li>
+					</li>
                    <?php } ?>
           		</ul>
           		<div class="navbar-line"></div>
@@ -130,7 +104,7 @@ AppAsset::register($this);
                     <a  href="#" class="">
                     <img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/face.png" width="40" height="40" >
                     </a>                  
-                	<a href="https://www.instagram.com/ninilala__/" class="">
+                	<a href="https://www.instagram.com/ninilala__/"  target="_blank">
                 		<img src="<?php echo Yii::getAlias("@web")?>/web/images/icons/insta.png" width="40" height="40" >
                 	</a>
                 	<a href="<?php echo Yii::getAlias("@web")?>/site/contact" class="">
